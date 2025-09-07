@@ -2,6 +2,7 @@ import sys
 import hashlib
 from PIL import Image
 
+# TODO: Instead of sequential XOR, need to create deterministic algo for shuffling message bits based on key and length
 # TODO: Overwrite timestamps
 # TODO: Remove pillow dependence so we can use any non-encrypted/compressed files
 # VALIDATED: Remove the rng, we need an algorithm to make it repeatable across systems -- validated
