@@ -98,7 +98,7 @@ def encode(infile, outfile, message, passphrase):
     # gen key stream
     ks = keyStream(passphrase, len(data_pairs))
     
-    # lettuce now encode
+    # lettuce now encode, here is where we need go incorporate deterministic algo
     for i in range(len(data_pairs)):
         c = data_pairs[i] ^ ks[i] # simple XOR the current stream with keystream
         flat[i] = (flat[i] & 0b11111100) | c # replace the last 2 bits of current pixel with c, keeping the top 6 bits unchanged -- bitwise OR
